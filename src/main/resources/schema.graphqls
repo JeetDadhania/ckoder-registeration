@@ -1,0 +1,28 @@
+
+type Ckoder {
+    ckoderId: String
+    firstName: String!
+    lastName: String
+    emailId: String!
+    phoneNo: Int
+}
+
+# The Root Query for the application
+type Query {
+    getCkoder: [Ckoder]!
+    loginCkoder(emailId:String!,password:String!): String!
+}
+
+# The Root Mutation for the application
+type Mutation {
+    addCkoder( ckoderWrapper: CkoderWrapper): Ckoder!
+}
+
+input CkoderWrapper{
+    firstName: String!
+    lastName: String
+    emailId: String!
+    password: String
+    phoneNo: Int
+
+}
